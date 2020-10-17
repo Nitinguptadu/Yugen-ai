@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Has the client subscribed a term deposit</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="Age" required="required" />
+        <input type="text" name="job" placeholder="Job" required="required" />
+	<input type="text" name="marital" placeholder="Marital" required="required" />
+	<input type="text" name="education" placeholder="Education" required="required" />
+	<input type="text" name="default" placeholder="Default" required="required" />
+	<input type="text" name="balance" placeholder="Balance" required="required" />
+	<input type="text" name="housing" placeholder="Housing" required="required" />
+	<input type="text" name="loan" placeholder="Loan" required="required" />
+	<input type="text" name="contact" placeholder="Contact" required="required" />
+	<input type="text" name="day" placeholder="Day" required="required" />
+	<input type="text" name="month" placeholder="Month" required="required" />
+	<input type="text" name="duration" placeholder="duration" required="required" />
+	<input type="text" name="campaign" placeholder="Campaign" required="required" />
+	<input type="text" name="pdays" placeholder="pdays" required="required" />
+	<input type="text" name="previous" placeholder="previous" required="required" />
+		<input type="text" name="poutcome" placeholder="poutcome" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
